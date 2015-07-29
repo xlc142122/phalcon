@@ -1,0 +1,7 @@
+#对项目的所有请求都将被重定向到public/文档根目录.确保内部项目的文件夹仍然对公共访客隐藏,消除一些安全威胁
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule ^$ public/  [L]
+    RewriteRule ((?s).*)    public/$1   [L]
+</IfModule>

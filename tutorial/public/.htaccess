@@ -1,0 +1,7 @@
+#检查是否存在所请求的文件，如果存在所要请求的文件，就不需要Web服务器模块来重写
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^((?s).*)$  index.php?_url=/$1  [QSA,L]
+</IfModule>
